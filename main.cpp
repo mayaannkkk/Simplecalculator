@@ -7,11 +7,11 @@ void mod_ulus(double a ,double b );
 void difference(double a ,double b );
 void sum(double a ,double b );
 void print_menu(); 
-int choice;
 int main(){
     
     double First,Second;
     while(1){
+        int choice;
         print_menu();
         cin >> choice;
         
@@ -23,27 +23,25 @@ int main(){
             continue;
         }
         if(choice>=1&&choice<6){
+
             cout << "Enter two number:" << endl;
-            cin >> First;
-            cin >> Second;
+            cin >> First >> Second;             
             switch (choice){
-            case 1:
-            sum(First,Second);
-            break;
-            case 2:
-            difference(First,Second);
-            break;
-            case 3:
-            product(First,Second);
-            break;
-            case 4:
-            division(First,Second);
-            break;
-            case 5:
-            mod_ulus( First, Second);
-            break;
-            default:
-            cout << "Nothing. " << endl;
+                 case 1:
+                    sum(First,Second);
+                    break;
+                 case 2:
+                    difference(First,Second);
+                    break;
+                 case 3:
+                    product(First,Second);
+                    break;
+                 case 4:
+                    division(First,Second);
+                    break;
+                 case 5:
+                    mod_ulus( First, Second);
+                    break;
             }
 
         }
@@ -51,7 +49,7 @@ int main(){
     return 0;
 }
 void print_menu(){
-    cout << endl <<"----------------------"<< endl ;
+    cout <<"----------------------"<< endl ;
 
     cout << "Enter the choice:" << endl <<"1. sum " << endl << "2. difference" << endl << "3. product"<< endl <<  "4.  division " << endl << "5. modulus" << endl <<  "6. exit" << endl;
 
