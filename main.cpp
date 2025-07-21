@@ -1,29 +1,31 @@
-#include<stdio.h>
+#include<iostream>
+#include<cmath>
+using namespace std;
 void division(double a,double b);
 void product(double a,double b);
-void modulus(int a ,int b );
+void mod_ulus(double a ,double b );
 void difference(double a ,double b );
 void sum(double a ,double b );
-void print_menu();
+void print_menu(); 
 int choice;
-
 int main(){
     
     double First,Second;
     while(1){
         print_menu();
-        scanf("%d",&choice);
+        cin >> choice;
         
         if(choice==6){
             break;
         }
         if(choice<1||choice>6){
-            printf("Invalid choice\n");
+            cout << "Invalid Choice" << endl;
             continue;
         }
         if(choice>=1&&choice<6){
-            printf("Enter two number: ");
-            scanf("%lf %lf",&First,&Second);
+            cout << "Enter two number:" << endl;
+            cin >> First;
+            cin >> Second;
             switch (choice){
             case 1:
             sum(First,Second);
@@ -38,10 +40,10 @@ int main(){
             division(First,Second);
             break;
             case 5:
-            modulus((int) First,(int) Second);
+            mod_ulus( First, Second);
             break;
             default:
-            printf("Nothing is here.\n");
+            cout << "Nothing. " << endl;
             }
 
         }
@@ -49,31 +51,31 @@ int main(){
     return 0;
 }
 void print_menu(){
-    printf("\n----------------------\n");
+    cout << endl <<"----------------------"<< endl ;
 
-    printf("Enter the choice: \n1. sum\n2. difference\n3. product\n4.  division\n5. modulus\n6. exit\n ");
+    cout << "Enter the choice:" << endl <<"1. sum " << endl << "2. difference" << endl << "3. product"<< endl <<  "4.  division " << endl << "5. modulus" << endl <<  "6. exit" << endl;
 
 }
 void sum(double a ,double b ){
-    printf("%lf\n",a+b);
+    cout << a+b << endl;
 }
 void difference(double a ,double b ){
-    printf("%lf\n",a-b);
+    cout << a-b << endl;
 }
 void product(double a ,double b ){
-    printf("%lf\n",a*b);
+    cout << a*b << endl;
 }
 void division(double a ,double b ){
     if(b==0){
-        printf("Number can't be divisible.\n");
+        cout << "Number can't be divisible." << endl;
     }
-    else printf("%lf\n",a/b);
+    else cout << a/b << endl;
 }
-void modulus(int a ,int b ){
+void mod_ulus(double a ,double b ){
     if(b==0){
-        printf("Modulus can not defined\n");
+        cout  << "Modulus can not defined." << endl;
     }
-    else printf("%d\n",a % b);
+    else cout << fmod(a,b) << endl;
 }
 
 
